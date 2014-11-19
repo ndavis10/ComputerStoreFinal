@@ -15,14 +15,14 @@ namespace ComputerStoreFinal.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Learn about our company and what we are about";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "You can contact us a number of different ways:";
+            ViewBag.Message = "You can contact us a number of different ways";
 
             return View();
         }
