@@ -22,7 +22,7 @@ namespace ComputerStoreFinal.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "You can contact us a number of different ways:";
 
             return View();
         }
