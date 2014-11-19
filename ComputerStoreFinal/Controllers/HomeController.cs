@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace ComputerStoreFinal.Controllers
 {
+    //test comment for Git testing
     public class HomeController : Controller
     {
         public ActionResult Index()
