@@ -6,8 +6,10 @@
 /* Set padding to keep content from hitting the edges */
 .body-content {
     margin-left: 180px;
+    margin-right: 10%;
+    padding-right:15px;
     padding-left:15px;
-    padding-right: 15px;
+    width:auto;
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
@@ -49,6 +51,7 @@ textarea {
     }
     .body-content{
         margin-left:120px;
+        margin-right:0;
     }
     .footer {
         width:90%;
@@ -61,7 +64,8 @@ textarea {
         display:none;
     }
     .body-content{
-        margin-left:15px;
+        margin-left:0;
+        margin-right:0;
     }
     .footer {
         width:100%;
@@ -72,5 +76,7 @@ textarea {
         left:0;
         bottom:0;
         background:#ffffff;
+        border-top:solid;
+        border-top-width:2px;
     }
 }
