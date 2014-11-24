@@ -8,6 +8,7 @@ namespace ComputerStoreFinal.Models
     public partial class Order
     {
         public int OrderID { get; set; }
+        public string CustomerID { get; set; }
         public string UserName { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
