@@ -14,6 +14,5 @@ namespace ComputerStoreFinal.Models
         public string PartDescription { get; set; }
         public decimal PartPrice { get; set; }
         public string PartImg { get; set; }
-        public Category Category { get; set; }
     }
 }
