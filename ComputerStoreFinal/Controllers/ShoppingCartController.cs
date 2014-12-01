@@ -33,7 +33,7 @@ namespace ComputerStoreFinal.Controllers
         {
             // Retrive the part from the database
             var addedPart = ComputerStoreDb.Parts.Single(part => part.PartID == id);
-            // Add the part in the shopping card
+            // Add the part in the shopping cart
             var cart = ShoppingCart.GetCart(this.HttpContext);
 
             cart.AddToCart(addedPart);
