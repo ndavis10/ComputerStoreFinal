@@ -163,6 +163,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ShoppingCartController.cs" />
+    <Compile Include="Controllers\StoreController.cs" />
     <Compile Include="DataContexts\ComputerStoreDb.cs" />
     <Compile Include="DataContexts\ComputerStoreMigrations\201412011918341_InitialCreate.cs" />
     <Compile Include="DataContexts\ComputerStoreMigrations\201412011918341_InitialCreate.Designer.cs">
@@ -251,6 +252,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Store\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
