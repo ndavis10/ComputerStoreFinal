@@ -164,6 +164,11 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="DataContexts\ComputerStoreDb.cs" />
+    <Compile Include="DataContexts\ComputerStoreMigrations\201412011918341_InitialCreate.cs" />
+    <Compile Include="DataContexts\ComputerStoreMigrations\201412011918341_InitialCreate.Designer.cs">
+      <DependentUpon>201412011918341_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataContexts\ComputerStoreMigrations\Configuration.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -253,6 +258,11 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DataContexts\ComputerStoreMigrations\201412011918341_InitialCreate.resx">
+      <DependentUpon>201412011918341_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
