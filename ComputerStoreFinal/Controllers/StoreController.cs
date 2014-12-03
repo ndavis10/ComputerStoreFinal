@@ -16,11 +16,11 @@ namespace ComputerStoreFinal.Controllers
         {
             var category = new List<Category>
             {
-                new Category { Name = "" },
-                new Category { Name = "" },
-                new Category { Name = "" },
-                new Category { Name = "" },
-                new Category { Name = "" }
+                new Category { CategoryID = "" },
+                new Category { CategoryID = "" },
+                new Category { CategoryID = "" },
+                new Category { CategoryID = "" },
+                new Category { CategoryID = "" }
             };
             return View(category);
         }

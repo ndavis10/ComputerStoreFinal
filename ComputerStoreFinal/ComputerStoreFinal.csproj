@@ -162,6 +162,7 @@
     <Compile Include="Controllers\CheckoutController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PartsManagerController.cs" />
     <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Controllers\StoreController.cs" />
     <Compile Include="DataContexts\ComputerStoreDb.cs" />
@@ -263,6 +264,11 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\ShoppingCart\Index.cshtml" />
     <Content Include="Views\CheckOut\AddressAndPayment.cshtml" />
+    <Content Include="Views\PartsManager\Create.cshtml" />
+    <Content Include="Views\PartsManager\Delete.cshtml" />
+    <Content Include="Views\PartsManager\Details.cshtml" />
+    <Content Include="Views\PartsManager\Edit.cshtml" />
+    <Content Include="Views\PartsManager\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
