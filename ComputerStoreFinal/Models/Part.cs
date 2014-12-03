@@ -9,7 +9,7 @@ namespace ComputerStoreFinal.Models
     {
         public int PartID { get; set; }
         public int CategoryID { get; set; }
-        public int ModelNumber { get; set; }
+        public string ModelNumber { get; set; }
         public string PartName { get; set; }
         public string PartDescription { get; set; }
         public decimal PartPrice { get; set; }
