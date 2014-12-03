@@ -1,0 +1,32 @@
+﻿@model IEnumerable<ComputerStoreFinal.Models.Category>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+    @{
+        int count = 1;
+        foreach (ComputerStoreFinal.Models.Category c in Model)
+        {
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id=@("heading" + count)>
+                    <h4 class="panel-title">
+                        <a class="@(count > 1 ? "collapsed" : "")" data-toggle="collapse" data-parent="#accordion" href="@("#collapse" + count)" aria-expanded="@(count > 1 ? "false" : "true")" aria-controls="@("collapse" + count)">
+                            @c.Name
+                        </a>
+                    </h4>
+                </div>
+                <div id="@("collapse" + count)" class="@(count > 1 ? "panel-collapse collapse" : "panel-collapse collapse in")" role="tabpanel" aria-labelledby="@("heading" + count)">
+                    <div class="panel-body">
+                        This is a test. The count is @count
+                    </div>
+                </div>
+            </div>
+            count++;
+        }
+    }
+</div>
+
