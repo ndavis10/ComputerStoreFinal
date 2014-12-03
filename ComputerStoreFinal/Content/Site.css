@@ -5,7 +5,8 @@
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    margin-left: 180px;
+    margin-top:10px;
+    margin-left: 185px;
     margin-right: 10%;
     padding-right:15px;
     padding-left:15px;

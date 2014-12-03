@@ -16,14 +16,14 @@ namespace ComputerStoreFinal.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Learn about our company and what we are about";
+            ViewBag.Message = "Learn what Bananas Computer Store is all about";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "You can contact us a number of different ways";
+            ViewBag.Message = "Please feel free to contact us via any of the following methods";
 
             return View();
         }
