@@ -8,9 +8,11 @@
 
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
     @{
+        List<ComputerStoreFinal.Models.Part> partsList = ViewBag.parts;
         int count = 1;
         foreach (ComputerStoreFinal.Models.Category c in Model)
         {
+            IEnumerable<ComputerStoreFinal.Models.Part> categoryParts = from p in partsList where p.CategoryID == c.CategoryID select p;
             <div class="panel panel-default">
                 <div class="panel-heading" role="tab" id=@("heading" + count)>
                     <h4 class="panel-title">
@@ -21,7 +23,14 @@
                 </div>
                 <div id="@("collapse" + count)" class="@(count > 1 ? "panel-collapse collapse" : "panel-collapse collapse in")" role="tabpanel" aria-labelledby="@("heading" + count)">
                     <div class="panel-body">
-                        This is a test. The count is @count
+                        @{
+                            List<SelectListItem> partList = new List<SelectListItem>();
+                            foreach(ComputerStoreFinal.Models.Part p in categoryParts)
+                            {
+                                partList.Add(new SelectListItem { Text = p.PartName + " - $" + p.PartPrice.ToString(), Value = p.PartID.ToString() });
+                            }
+                        }
+                        @Html.DropDownList(c.Name, partList, new { @class = "form-control", style="max-width:80%" })
                     </div>
                 </div>
             </div>
