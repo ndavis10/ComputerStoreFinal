@@ -12,15 +12,9 @@ namespace ComputerStoreFinal.Controllers
     {
         ComputerStoreDb ComputerStoreDb = new ComputerStoreDb();
         // GET: Store
-        public ActionResult Index(int CategoryID)
+        public ActionResult Index()
         {
-            var category = new List<Category>
-            {
-                var computerID = new List<Category>
-                {
-                    new Category {}
-                }
-            }
+            var category = ComputerStoreDb.Categories.ToList<Category>();
             return View(category);
         }
 
