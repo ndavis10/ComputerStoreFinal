@@ -164,7 +164,6 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PartsManagerController.cs" />
     <Compile Include="Controllers\ShoppingCartController.cs" />
-    <Compile Include="Controllers\StoreController.cs" />
     <Compile Include="DataContexts\ComputerStoreDb.cs" />
     <Compile Include="DataContexts\ComputerStoreMigrations\201412011918341_InitialCreate.cs" />
     <Compile Include="DataContexts\ComputerStoreMigrations\201412011918341_InitialCreate.Designer.cs">
