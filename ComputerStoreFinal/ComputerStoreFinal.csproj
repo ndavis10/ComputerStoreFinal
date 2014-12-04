@@ -170,18 +170,6 @@
     <Compile Include="DataContexts\ComputerStoreMigrations\201412011918341_InitialCreate.Designer.cs">
       <DependentUpon>201412011918341_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataContexts\ComputerStoreMigrations\201412012036264_UpdateSchema.cs" />
-    <Compile Include="DataContexts\ComputerStoreMigrations\201412012036264_UpdateSchema.Designer.cs">
-      <DependentUpon>201412012036264_UpdateSchema.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DataContexts\ComputerStoreMigrations\201412012044294_ThingsWontWork.cs" />
-    <Compile Include="DataContexts\ComputerStoreMigrations\201412012044294_ThingsWontWork.Designer.cs">
-      <DependentUpon>201412012044294_ThingsWontWork.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DataContexts\ComputerStoreMigrations\201412012055392_IShotTheSchema.cs" />
-    <Compile Include="DataContexts\ComputerStoreMigrations\201412012055392_IShotTheSchema.Designer.cs">
-      <DependentUpon>201412012055392_IShotTheSchema.cs</DependentUpon>
-    </Compile>
     <Compile Include="DataContexts\ComputerStoreMigrations\Configuration.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -284,15 +272,6 @@
   <ItemGroup>
     <EmbeddedResource Include="DataContexts\ComputerStoreMigrations\201412011918341_InitialCreate.resx">
       <DependentUpon>201412011918341_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DataContexts\ComputerStoreMigrations\201412012036264_UpdateSchema.resx">
-      <DependentUpon>201412012036264_UpdateSchema.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DataContexts\ComputerStoreMigrations\201412012044294_ThingsWontWork.resx">
-      <DependentUpon>201412012044294_ThingsWontWork.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DataContexts\ComputerStoreMigrations\201412012055392_IShotTheSchema.resx">
-      <DependentUpon>201412012055392_IShotTheSchema.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

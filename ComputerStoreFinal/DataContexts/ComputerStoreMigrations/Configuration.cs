@@ -71,18 +71,6 @@ namespace ComputerStoreFinal.DataContexts.ComputerStoreMigrations
                 new Part{ PartID = 18, ModelNumber = "BX80646I54690K", PartName = "Intel Core i5-4690K",
                     PartDescription = "Description goes here.", PartPrice = 219.99m, PartImg = "", CategoryID = 2}
             };
-            var Categories = new List<Category>{
-                new Category{ CategoryID = 1, Name = "Motherboard"},
-                new Category{ CategoryID = 2, Name = "CPU"},
-                new Category{ CategoryID = 3, Name = "Memory"},
-                new Category{ CategoryID = 4, Name = "GPU"},
-                new Category{ CategoryID = 5, Name = "Hard Drive"},
-                new Category{ CategoryID = 6, Name = "Case"},
-                new Category{ CategoryID = 7, Name = "Power Supply"}
-            };
-            context.Parts.AddOrUpdate<Part>(Parts.ToArray<Part>());
-            context.Categories.AddOrUpdate<Category>(Categories.ToArray<Category>());
-            context.SaveChanges();
         }
     }
 }
