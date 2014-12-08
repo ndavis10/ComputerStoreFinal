@@ -20,6 +20,18 @@ namespace ComputerStoreFinal.Controllers
             return View(category);
         }
 
+        [HttpPost]
+        public ActionResult Index(FormCollection form)
+        {
+            int count = 0;
+            foreach(var data in Request.Form)
+            {
+                TempData[count.ToString()] = data;
+                count++;
+            }
+            return RedirectToAction("AddToCart", "ShoppingCart");
+        }
+
         public ActionResult Browse()
         {
 
