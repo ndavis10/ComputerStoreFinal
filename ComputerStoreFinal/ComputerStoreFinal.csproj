@@ -186,6 +186,10 @@
     <Compile Include="DataContexts\ComputerStoreMigrations\201412081852586_IDidNotSchemaTheDeputy.Designer.cs">
       <DependentUpon>201412081852586_IDidNotSchemaTheDeputy.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataContexts\ComputerStoreMigrations\201412082055022_IsThisLove.cs" />
+    <Compile Include="DataContexts\ComputerStoreMigrations\201412082055022_IsThisLove.Designer.cs">
+      <DependentUpon>201412082055022_IsThisLove.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataContexts\ComputerStoreMigrations\Configuration.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -300,6 +304,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DataContexts\ComputerStoreMigrations\201412081852586_IDidNotSchemaTheDeputy.resx">
       <DependentUpon>201412081852586_IDidNotSchemaTheDeputy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataContexts\ComputerStoreMigrations\201412082055022_IsThisLove.resx">
+      <DependentUpon>201412082055022_IsThisLove.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
