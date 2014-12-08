@@ -24,34 +24,36 @@ namespace ComputerStoreFinal.Models
         {
             return GetCart(controller.HttpContext);
         }
+
         public void AddToCart(Part part)
         {
-            // Get the matching cart and album instances
-            var cartItem = ComputerStoreDb.Carts.SingleOrDefault(
-                c => c.CartID == ShoppingCartID
-                && c.PartID == part.PartID);
+                // Get the matching cart and album instances
+                var cartItem = ComputerStoreDb.Carts.SingleOrDefault(
+                    c => c.CartID == ShoppingCartID
+                    && c.PartID == part.PartID);
 
-            if (cartItem == null)
-            {
-                // Create a new cart item if no cart item exists
-                cartItem = new Cart
+                if (cartItem == null)
                 {
-                    PartID = part.PartID,
-                    CartID = ShoppingCartID,
-                    Count = 1,
-                    DateCreated = DateTime.Now
-                };
-                ComputerStoreDb.Carts.Add(cartItem);
-            }
-            else
-            {
-                // If the item does exist in the cart, 
-                // then add one to the quantity
-                cartItem.Count++;
-            }
+                    // Create a new cart item if no cart item exists
+                    cartItem = new Cart
+                    {
+                        PartID = part.PartID,
+                        CartID = ShoppingCartID,
+                        Count = 1,
+                        DateCreated = DateTime.Now
+                    };
+                    ComputerStoreDb.Carts.Add(cartItem);
+                }
+                else
+                {
+                    // If the item does exist in the cart, 
+                    // then add one to the quantity
+                    cartItem.Count++;
+                }
             // Save changes
             ComputerStoreDb.SaveChanges();
         }
+
         public int RemoveFromCart(int id)
         {
             // Get the cart

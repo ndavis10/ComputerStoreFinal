@@ -29,18 +29,70 @@ namespace ComputerStoreFinal.Controllers
             return View(viewModel);
         }
 
-        public ActionResult AddToCart(int id)
+        [HttpPost]
+        public ActionResult AddToCart(FormCollection form)
         {
-            // Retrive the part from the database
-            var addedPart = ComputerStoreDb.Parts.Single(part => part.PartID == id);
+            string mobo = Request.Form["Motherboard"];
+            string cpu = Request.Form["CPU"];
+            string memory = Request.Form["Memory"];
+            string gpu = Request.Form["GPU"];
+            string hardDrive = Request.Form["Hard Drive"];
+            string cabinet = Request.Form["Case"];
+            string powerSupply = Request.Form["Power Supply"];
+
+            int id = Int32.Parse(mobo);
+            var addedPart = ComputerStoreDb.Parts.Single(addPart => addPart.PartID == id);
             // Add the part in the shopping cart
             var cart = ShoppingCart.GetCart(this.HttpContext);
 
             cart.AddToCart(addedPart);
 
-            //go back to the part page for more parts
+            id = Int32.Parse(cpu);
+            addedPart = ComputerStoreDb.Parts.Single(addPart => addPart.PartID == id);
+            
+            cart.AddToCart(addedPart);
+
+            id = Int32.Parse(memory);
+            addedPart = ComputerStoreDb.Parts.Single(addPart => addPart.PartID == id);
+            
+            cart.AddToCart(addedPart);
+
+            id = Int32.Parse(gpu);
+            addedPart = ComputerStoreDb.Parts.Single(addPart => addPart.PartID == id);
+            
+            cart.AddToCart(addedPart);
+
+            /*id = Int32.Parse(hardDrive);
+            addedPart = ComputerStoreDb.Parts.Single(addPart => addPart.PartID == id);
+            
+            cart.AddToCart(addedPart);*/
+
+            id = Int32.Parse(cabinet);
+            addedPart = ComputerStoreDb.Parts.Single(addPart => addPart.PartID == id);
+            cart.AddToCart(addedPart);
+
+            id = Int32.Parse(powerSupply);
+            addedPart = ComputerStoreDb.Parts.Single(addPart => addPart.PartID == id);
+            
+            cart.AddToCart(addedPart);
+
             return RedirectToAction("Index");
         }
+
+        /*public ActionResult AddToCart(int? id)
+        {
+            // Retrive the part from the database
+            if (id != null)
+            {
+                var addedPart = ComputerStoreDb.Parts.Single(part => part.PartID == id);
+                // Add the part in the shopping cart
+                var cart = ShoppingCart.GetCart(this.HttpContext);
+
+                cart.AddToCart(addedPart);
+            }
+            //go back to the part page for more parts
+            return RedirectToAction("Index");
+        }*/
         [HttpPost]
         public ActionResult RemoveFromCart(int id)
         {
