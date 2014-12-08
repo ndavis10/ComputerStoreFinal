@@ -15,6 +15,8 @@ namespace ComputerStoreFinal.Controllers
         public ActionResult Index()
         {
             var category = ComputerStoreDb.Categories.ToList<Category>();
+            var parts = ComputerStoreDb.Parts.ToList<Part>();
+            ViewBag.parts = parts;
             return View(category);
         }
 
