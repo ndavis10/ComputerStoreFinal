@@ -40,7 +40,7 @@ namespace ComputerStoreFinal.Controllers
                 return View(order);
             }
         }
-        public ActionResult Complete(int id)
+        public ActionResult Complete(int? id)
         {
             return View(id);
         }
