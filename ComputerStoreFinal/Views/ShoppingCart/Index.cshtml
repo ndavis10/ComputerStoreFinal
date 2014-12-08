@@ -4,39 +4,60 @@
 }
 
 <style>
-    table {border: 1px black solid ; width: 80% ; max-width:600px;}
+    table {border: 1px black solid ; width: 100%;}
     th{background-color:black; color:white; }
     td,th{padding:5px; text-align:right; }
 </style>
 
-<h3><em>Review</em>your cart:</h3>
-<p><a href ="@Url.Action("AddressAndPayment","Checkout")"
-      class="btn btn-info btn-lg active" role="button">Checkout >>
-    </a>
-</p>
+<h3><em>Review</em> your cart:</h3>
 
 <div id="update-message"></div>
-<table>
-    <tr>
-        <th style="text-align:left;">Part Name</th>
-        <th>Price (each)</th>
-        <th>Quantity</th>
-        <th></th>
-    </tr>
-    @foreach (var item in Model.CartItems)
-    {
-        <tr id="row-@item.RecordID">
-            <td style="text-align:left;">
-                @Html.ActionLink(item.Part.PartName, "Details", "Store", new{ id  = item.Part.PartID }, null)
-            </td>
-            <td>@item.Part.PartPrice</td>
-            <td id="item-count-@item.RecordID">@item.Count</td>
-            <td><a href="#" class="RemoveLink"
-                   data-id="@item.RecordID">Remove from cart</a></td>
-        </tr>
-    }
-    <tr style="font-weight:bold;border-top:1px #999 solid;">
-        <td colspan="3" style="text-align:left;">Total</td>
-        <td id="cart-total">@Model.CartTotal</td>
-    </tr>
-</table>
+<div class="row">
+    <div class="col-md-11">
+        <table>
+            <tr>
+                <th style="text-align:left;">Part Name</th>
+                <th>Price (each)</th>
+                <th>Quantity</th>
+                <th></th>
+            </tr>
+            @foreach (var item in Model.CartItems)
+            {
+                <tr id="row-@item.RecordID">
+                    <td style="text-align:left;">
+                        @Html.ActionLink(item.Part.PartName, "Details", "Store", new { id = item.Part.PartID }, null)
+                    </td>
+                    <td>@item.Part.PartPrice</td>
+                    <td id="item-count-@item.RecordID">@item.Count</td>
+                    <td>
+                        <a href="#" class="RemoveLink"
+                           data-id="@item.RecordID">Remove from cart</a>
+                    </td>
+                </tr>
+            }
+            <tr style="font-weight:bold;border-top:1px #999 solid;">
+                <td colspan="3" style="text-align:left;">Total</td>
+                <td id="cart-total">@Model.CartTotal</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<br />
+
+<div class="row">
+    <div class="col-md-11">
+        <a href="@Url.Action("AddressAndPayment","Checkout")"
+           class="btn btn-info btn-md active pull-right" role="button">
+            Checkout  >>
+        </a>
+    </div>    
+</div><br />
+<div class="row">
+    <div class="col-md-11">
+
+        <a href="@Url.Action("AddressAndPayment","Checkout")"
+           class="btn btn-info btn-sm pull-right" role="button">
+            Continue Shopping >>
+        </a>
+    </div>
+</div>
