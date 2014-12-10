@@ -7,26 +7,45 @@
 <h2>Index</h2>
 
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-    @{
-        int count = 1;
-        foreach (ComputerStoreFinal.Models.Category c in Model)
-        {
-            <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id=@("heading" + count)>
-                    <h4 class="panel-title">
-                        <a class="@(count > 1 ? "collapsed" : "")" data-toggle="collapse" data-parent="#accordion" href="@("#collapse" + count)" aria-expanded="@(count > 1 ? "false" : "true")" aria-controls="@("collapse" + count)">
-                            @c.Name
-                        </a>
-                    </h4>
-                </div>
-                <div id="@("collapse" + count)" class="@(count > 1 ? "panel-collapse collapse" : "panel-collapse collapse in")" role="tabpanel" aria-labelledby="@("heading" + count)">
-                    <div class="panel-body">
-                        This is a test. The count is @count
+    <form id="PartsForm" name="PartsForm" method="post" action="~/ShoppingCart/AddToCart">
+        @{
+            //Do not mess with this code or you will probably make Nathaniel sad :(
+            //Get the list of parts, initialize section counter
+            List<ComputerStoreFinal.Models.Part> partsList = ViewBag.parts;
+            int count = 1;
+            foreach (ComputerStoreFinal.Models.Category c in Model)
+            {
+                //Get the list of parts within the current category
+                IEnumerable<ComputerStoreFinal.Models.Part> categoryParts = from p in partsList where p.CategoryID == c.CategoryID select p;
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id=@("heading" + count)>
+                        <h4 class="panel-title">
+                            <a class="@(count > 1 ? "collapsed" : "")" data-toggle="collapse" data-parent="#accordion" href="@("#collapse" + count)" aria-expanded="@(count > 1 ? "false" : "true")" aria-controls="@("collapse" + count)">
+                                @c.Name
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="@("collapse" + count)" class="@(count > 1 ? "panel-collapse collapse" : "panel-collapse collapse in")" role="tabpanel" aria-labelledby="@("heading" + count)">
+                        <div class="panel-body">
+                            @{
+                //Generate a list of select list items
+                List<SelectListItem> partList = new List<SelectListItem>();
+                foreach (ComputerStoreFinal.Models.Part p in categoryParts)
+                {
+                    //create select list item from parts
+                    partList.Add(new SelectListItem { Text = p.PartName + " - $" + p.PartPrice.ToString(), Value = p.PartID.ToString() });
+                }
+                            }
+                            <!--Generate select list server-side-->
+                            @Html.DropDownList(c.Name, partList, new { @class = "form-control", style = "max-width:80%" })
+                        </div>
                     </div>
                 </div>
-            </div>
-            count++;
+                count++;
+            }
         }
-    }
+        <input class="btn btn-default" type="submit" value="Add to Cart"/>
+    </form>
+
 </div>
 

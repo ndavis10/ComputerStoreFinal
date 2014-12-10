@@ -15,7 +15,28 @@ namespace ComputerStoreFinal.Controllers
         public ActionResult Index()
         {
             var category = ComputerStoreDb.Categories.ToList<Category>();
+            var parts = ComputerStoreDb.Parts.ToList<Part>();
+            ViewBag.parts = parts;
             return View(category);
+        }
+
+        [HttpPost]
+        public ActionResult Index(FormCollection form)
+        {
+            int count = 0;
+            foreach(var data in Request.Form)
+            {
+                TempData[count.ToString()] = data;
+                count++;
+            }
+            return RedirectToAction("AddToCart", "ShoppingCart");
+        }
+
+        public ActionResult Prebuilt()
+        {
+            var computers = ComputerStoreDb.Computers.ToList<Computer>();
+
+            return View();
         }
 
         public ActionResult Browse()
