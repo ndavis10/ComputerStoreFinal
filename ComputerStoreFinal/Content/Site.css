@@ -19,6 +19,13 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.linkSide {
+    font-size:14pt;
+}
+.sideIcon{
+    font-size:16pt;
+}
 #sidebar {
     float:left;
     width:180px;
@@ -57,6 +64,12 @@ textarea {
     .footer {
         width:90%;
         height:30px;
+    }
+    .linkSide{
+        font-size:8pt;
+    }
+    .sideIcon{
+        font-size:18pt;
     }
 }
 
