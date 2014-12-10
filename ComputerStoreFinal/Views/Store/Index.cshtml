@@ -34,10 +34,12 @@
                 {
                     //create select list item from parts
                     partList.Add(new SelectListItem { Text = p.PartName + " - $" + p.PartPrice.ToString(), Value = p.PartID.ToString() });
+                    Html.Hidden(p.PartID.ToString() + "Desc", p.PartDescription);
                 }
                             }
                             <!--Generate select list server-side-->
-                            @Html.DropDownList(c.Name, partList, new { @class = "form-control", style = "max-width:80%" })
+                            @Html.DropDownList(c.Name, partList, new { @class = "dropDown form-control", style = "max-width:80%" })
+                            <p id="@(c.Name + "Desc")"></p>
                         </div>
                     </div>
                 </div>
@@ -49,3 +51,7 @@
 
 </div>
 
+@section Scripts
+{
+    <script src="../Scripts/Store.js"></script>
+}
