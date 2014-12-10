@@ -28,19 +28,24 @@
                     <div id="@("collapse" + count)" class="@(count > 1 ? "panel-collapse collapse" : "panel-collapse collapse in")" role="tabpanel" aria-labelledby="@("heading" + count)">
                         <div class="panel-body">
                             @{
-                                //Generate a list of select list items
-                                List<SelectListItem> partList = new List<SelectListItem>();
-                                foreach (ComputerStoreFinal.Models.Part p in categoryParts)
-                                {
-                                    //create select list item from parts
-                                    <p id="@(p.PartID + "Desc")" hidden="hidden">@p.PartDescription</p>
-                                    partList.Add(new SelectListItem { Text = p.PartName + " - $" + p.PartPrice.ToString(),
-                                        Value = p.PartID.ToString() });
-                                }
-                            }
+                //Generate a list of select list items
+                List<SelectListItem> partList = new List<SelectListItem>();
+                foreach (ComputerStoreFinal.Models.Part p in categoryParts)
+                {
+                    //create select list item from parts
+                    <p id="@(p.PartID + "Desc")" hidden="hidden">@p.PartDescription</p>
+                    <p id="@(p.PartID + "Img")" hidden="hidden">@p.PartImg</p>
+                    partList.Add(new SelectListItem
+                    {
+                        Text = p.PartName + " - $" + p.PartPrice.ToString(),
+                        Value = p.PartID.ToString()
+                    });
+                }
+}
                             <!--Generate select list server-side-->
                             @Html.DropDownList(c.Name, partList, new { @class = "dropDown form-control", style = "max-width:80%" })
                             <p id="@(c.Name + "Desc")"></p>
+                            <img id="@(c.Name + "Img")" hidden="hidden" />
                         </div>
                     </div>
                 </div>
