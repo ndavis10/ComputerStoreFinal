@@ -31,8 +31,8 @@
                             </ul>
                         </li>
                         <li style="border-right:1px solid;">@Html.ActionLink("Contact", "Contact", "Home")</li>
-                        <li>@Html.ActionLink("My Account", "Account", "Home")</li>
-                        <li><a href="~/ShoppingCart/Index"><span class="glyphicon glyphicon-shopping-cart pull-right" style="height:inherit;width:auto;font-size:15pt;"></span></a></li>
+                        <li><a href="~/Views/Account"><span class="glyphicon glyphicon-cog pull-left" style="font-size:18pt;"></span></a></li>
+                        <li><a href="~/ShoppingCart/Index"><span class="glyphicon glyphicon-shopping-cart pull-right" style="height:inherit;width:auto;font-size:16pt;"></span></a></li>
                         
                     </ul>
             </div>
@@ -53,10 +53,9 @@
                 <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
             </ul>
             <ul style="border-bottom:1px solid; border-top:1px solid; vertical-align:central;">
-                <li>@Html.ActionLink("My Account", "Account", "Home")</li>
-                <li></li>
-                <li><strong>Shopping Cart:</strong></li>
-                <li><a href="~/ShoppingCart/Index"><div class="well-sm" style="text-align:center;font-weight:bold;">EMPTY</div></a></li>
+                <li style ="border-bottom:1px solid;"><span class="glyphicon glyphicon-cog pull-left sideIcon"></span><a href="~/Views/Account" class="linkSide">&nbsp;&nbsp;My Account</a></li>
+<li></li>
+                <li><span class="glyphicon glyphicon-shopping-cart pull-left sideIcon"></span><a href="~/ShoppingCart/Index" class="linkSide">&nbsp;&nbsp;Cart</a></li>
             </ul>
     </div>
     <div class="container body-content">
